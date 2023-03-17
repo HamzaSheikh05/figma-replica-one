@@ -1,8 +1,7 @@
 import React, { useState } from "react";
 import { ChevronLeftIcon, ChevronRightIcon } from "@heroicons/react/solid";
-
+import { items } from "../database/item";
 export const TextCarousel = () => {
-  const items = ["Item 1", "Item 2", "Item 3", "Item 4", "Item 5"];
   const [currentSlide, setCurrentSlide] = useState(0);
 
   const onNext = () => {
@@ -20,23 +19,31 @@ export const TextCarousel = () => {
   return (
     <div className="relative mt-[253px] mx-10">
       {/** Slides Data */}
-      <div className="my-4">
-        <p className="text-center text-2xl font-bold">{items[currentSlide]}</p>
+      <div className="my-4 flex flex-col items-center">
+        <h3 className="text-white text-center text-2xl font-bold mb-10">
+          {items[currentSlide].title}
+        </h3>
+        <h1 className="text-white text-center text-7xl font-bold mb-10">
+          {items[currentSlide].subtitle}
+        </h1>
+        <h5 className="text-white text-2xl text-center w-[700px] mb-10">
+          {items[currentSlide].description}
+        </h5>
       </div>
 
       {/** Navigation Buttons */}
       <div className="flex items-center justify-center">
         <button
           onClick={onPrev}
-          className="absolute left-0 top-1/2 transform -translate-y-1/2 focus:outline-none"
+          className="absolute left-0 top-[110px] transform -translate-y-1/2 focus:outline-none"
         >
-          <ChevronLeftIcon className="h-6 w-6" />
+          <ChevronLeftIcon className="h-10 w-10 text-white" />
         </button>
         <button
           onClick={onNext}
-          className="absolute right-0 top-1/2 transform -translate-y-1/2 focus:outline-none"
+          className="absolute right-0 top-[110px] transform -translate-y-1/2 focus:outline-none"
         >
-          <ChevronRightIcon className="h-6 w-6" />
+          <ChevronRightIcon className="h-10 w-10 text-white" />
         </button>
 
         {/** Pagination */}
@@ -46,7 +53,7 @@ export const TextCarousel = () => {
               key={idx}
               className={`rounded-full h-3 w-3 ${
                 currentSlide === idx
-                  ? "bg-blue-500"
+                  ? "bg-white"
                   : "bg-gray-400 hover:bg-gray-500"
               }`}
               onClick={() => setCurrentSlide(idx)}

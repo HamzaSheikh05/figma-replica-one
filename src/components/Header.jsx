@@ -4,7 +4,7 @@ export const Header = () => {
   return (
     <header>
       <nav className="flex justify-center">
-        <ul className="flex text-white gap-10 mt-[85px] mb-4">
+        <ul className="flex text-white gap-10 mt-[85px] text-lg leading-7 mb-4">
           <li>Home</li>
           <li>Features</li>
           <li>Pricing</li>
