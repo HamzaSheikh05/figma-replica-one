@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { ChevronLeftIcon, ChevronRightIcon } from "@heroicons/react/solid";
 import { items } from "../database/item";
+
 export const TextCarousel = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
 
