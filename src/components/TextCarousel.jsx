@@ -17,7 +17,7 @@ export const TextCarousel = () => {
   };
 
   return (
-    <div className="relative mt-[253px] mx-10">
+    <div className="relative mt-[150px] mx-10">
       {/** Slides Data */}
       <div className="my-4 flex flex-col items-center">
         <h3 className="text-white text-center text-2xl font-bold mb-10">
@@ -61,6 +61,11 @@ export const TextCarousel = () => {
           ))}
         </div>
       </div>
+
+      {/** Button */}
+      <button className="mt-20 w-[230px] h-[60px] text-white text-lg font-medium left-[50% - 160px/2] top-[50% - 26px/2] bg-[#482BE7] rounded-3xl">
+        Create an Account
+      </button>
     </div>
   );
 };
